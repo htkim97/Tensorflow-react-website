@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 개발 내용
 
-## Available Scripts
+#### 각 견종 별 학습데이터를 구축하기 위해 강아지 몸 전체가 나오는 사진들로 50장 이상의 이미지 데이터 셋을 수집했습니다 
+#### 이 수집한 이미지에 특정 학습 범위를 추출하기 위해 라벨링도구를 사용하여 라벨링 후 이미지를 품종에 따라 분류하였습니다.
+#### 품종별 학습을 진행하기 위해 분류된 품종 정보를 바탕으로 tensorflow에서 지원하는 객체인식인 object detection 모델을 사용하여 품종별 50장씩 3000번에 전이학습을 실행시켜 학습모델을 생성하였습니다. 
+#### 생성한 모델이 파이썬의 형태를 지니기 때문에 생성한 모델을 웹 친화적인 자바스크립트 형태로 변환시켰습니다.
+#### 변환을 마친 모델은 IBM클라우드 서버 환경에 업로드하여 웹 구축 시 실시간으로 데이터를 전송받아 웹캠이나 모바일 카메라로 강아지를 촬영했을시 
+#### 서버에 있는 데이터와 비교 후 동일성에 대한 퍼센트 확률을 표시와 생성한 qr코드를 인식하여 강아지의 정보를 표시해줍니다
 
-In the project directory, you can run:
 
-### `yarn start`
+<br>
+<br>
+<br>
+<br>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 웰시코기 인식 결과
+<br>
+<br>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![1PNG](https://user-images.githubusercontent.com/52130444/145998545-1004f9e9-b702-4fff-89fd-d1ed15ef4171.PNG)
 
-### `yarn test`
+<br>
+<br>
+### 88% 웰시코기임을 알수있고, qr코드 인식을 통해 진돌이라는 이름과 21.05.09의 생년 월일을 알수있다. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
+<br>
 
-### `yarn build`
+## 달마시안 인식 결과
+<br>
+<br>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![달마시안](https://user-images.githubusercontent.com/52130444/146000269-5b238771-1b67-4924-9a2b-e4775bac8a18.PNG)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<br>
+<br>
+### 85% 달마시안임을 알수있고, qr코드 인식을 통해 두부라는 이름과 21.10.02의 생년 월일을 알수있다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
